@@ -1,0 +1,98 @@
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 25
+  background-color: rgba(0, 0, 0, 0)
+  transition: background-color .3s ease-out, z-index 0s ease-out .3s
+  &.active
+    background-color: rgba(0, 0, 0, .35)
+    z-index: 100
+    transition: background-color .3s ease-out
+
+.pop-up
+  position: absolute
+  display: none
+  z-index: 100
+  max-width: 543px
+  max-height: 100%
+  overflow: auto
+  transform: translate(-50%, 150%)
+  top: 50%
+  left: 50%
+  padding: 25px 32px 32px
+  background-color: #393939
+  font-family: Noir Pro, sans-serif
+  font-weight: 300
+  font-size: 20px
+  line-height: 132.7%
+  letter-spacing: -0.05em
+  color: #FFFFFF
+  transition: transform .3s ease-out
+  &::-webkit-scrollbar
+    width: 10px
+  &::-webkit-scrollbar-track
+    background-color: #393939
+  &::-webkit-scrollbar-thumb
+    border-left-width: 3px
+    border-left-style: solid
+    border-image: linear-gradient(0deg, rgba(57,57,57,0.6951155462184874) 0%, rgba(243,106,29,1) 50%, rgba(57,57,57,0.7035189075630253) 100%) 1
+
+  &.init
+    display: block
+  &.active
+    z-index: 100
+    transition: transform .3s ease-out
+    transform: translate(-50%, -50%)
+  &__title
+    margin: 0 0 14px 0
+    font-size: 32px
+    line-height: 47px
+    letter-spacing: -0.05em
+    color: #727272
+    font-weight: bold
+    font-style: italic
+  &__desc
+    color: #727272
+  &__text
+    margin: 28px 0 0 0
+  &__close
+    position: absolute
+    right: 32px
+    top: 32px
+    width: 28px
+    height: 27px
+    stroke: #F36A1D
+    stroke-width: 2
+    transition: all .3s ease-out
+    cursor: pointer
+
+@media ( max-width: 640px)
+  .pop-up
+    max-width: 375px
+    width: 100%
+    bottom: 0
+    top: auto
+    height: 551px
+    font-size: 20px
+    transform: translate(-50%, 100%)
+    padding: 16px 16px 31px
+    &__title
+      font-size: 20px
+      line-height: 29px
+    &__close
+      right: 16px
+      top: 16px
+      width: 24px
+      height: 24px
+    &.active
+      transform: translate(-50%, 0)
+
+@media (hover: hover)
+  .pop-up
+    &__close
+      &:hover
+        transform: rotate(90deg)
+        stroke-width: 3
