@@ -5,5 +5,7 @@ import './css/normalize.css';
 import './css/style.css';
 import './sass/style.sass';
 import slider from './modules/slider';
+import loadingSlides from "./modules/loadingSlides";
 
-slider();
+const swiper = slider();
+loadingSlides(swiper);
