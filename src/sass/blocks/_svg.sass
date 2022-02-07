@@ -1,0 +1,44 @@
+.radiator
+  animation: radiator 2s infinite linear
+
+.headlight
+  animation: headlight 2s infinite linear
+
+.swiper-arrow-min, #arrow-min
+  display: none
+
+@media ( max-width: 640px)
+  #arrow, #arrow-hover
+    display: none
+  .swiper-arrow-min, #arrow-min
+    display: block
+
+@keyframes radiator
+  0%
+    stroke: #BBBBBB
+    opacity: 0.4
+  30%
+    stroke: #F36A1D
+  50%
+    opacity: 1
+  70%
+    opacity: 0.4
+  100%
+    stroke: #BBBBBB
+
+@keyframes headlight
+  0%
+    stroke: #C0C0C0
+    opacity: 0.4
+  30%
+    stroke: #F36A1D
+  40%
+    opacity: 1
+  50%
+    opacity: 0.4
+  60%
+    opacity: 1
+  70%
+    opacity: 0.4
+  100%
+    stroke: #C0C0C0
