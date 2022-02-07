@@ -1,0 +1,36 @@
+.social
+  position: absolute
+  display: flex
+  width: 162px
+  bottom: 40px
+  right: 64px
+  z-index: 75
+  justify-content: space-between
+  &.hidden > .social__icon
+    fill: none
+    transition: fill 1.2s ease-out
+  &__icon
+    fill: #727272
+    width: 44px
+    height: 44px
+    padding: 10px 8px
+    transition: fill .3s ease-out
+    cursor: pointer
+    &_odnoklassniki
+      padding: 7px 8px
+    &:hover
+      fill: #F36A1D
+
+@media ( max-width: 640px)
+  .social
+    bottom: 23px
+    right: 11px
+    flex-direction: column
+    height: 139px
+    width: auto
+    &__icon
+      width: 34px
+      height: 33px
+      padding: 5.1px 6.5px
+      &_facebook
+        padding: 5.1px 6.5px
