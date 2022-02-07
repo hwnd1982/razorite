@@ -1,0 +1,75 @@
+.like
+  position: absolute
+  left: 50%
+  transform: translate(-50%, 0)
+  z-index: 75
+  bottom: 3%
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 129px
+  justify-content: space-between
+  &-button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 72px
+    height: 72px
+    background: rgba(153, 153, 153, 0.2)
+    transition: background fill .3s ease-out
+    &.active
+      background-color: transparent
+      & > .like-button-svg
+        fill: #F36A1D
+    &-svg
+      width: 38px
+      height: 36px
+      fill: #393939
+      transition: background fill .3s ease-out
+    &.disable
+      background: rgba(153, 153, 153, 0.2)
+      opacity: .3
+      & > .like-button-svg
+        fill: #393939
+
+.like-counter
+  display: flex
+  font-family: Noir Pro, sans-serif
+  font-weight: 700
+  font-style: italic
+  font-weight: normal
+  font-size: 32px
+  line-height: 47px
+  letter-spacing: -0.05em
+  color: #727272
+  &-span
+    margin-right: 5px
+  & > &-value
+    color: #F36A1D
+    &.disable
+      color: #727272
+
+@media ( max-width: 640px)
+  .like
+    height: 91px
+    &-button
+      width: 54px
+      height: 54px
+      padding: 5px
+  .like-counter
+    font-size: 20px
+    line-height: 29px
+
+@media (hover: hover)
+  .like
+    &-button
+      cursor: pointer
+      &:hover
+        & > .like-button-svg
+          fill: #F6AA7F
+      &:hover
+        background: rgba(243, 106, 29, .1)
+        backdrop-filter: blur(4px)
+        &.active
+          & > .like-button-svg
+            fill: #F36A1D
